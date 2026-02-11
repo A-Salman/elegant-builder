@@ -4,6 +4,7 @@ import KpiCard from "@/components/dashboard/KpiCard";
 import LandUsageChart from "@/components/dashboard/LandUsageChart";
 import ProjectsChart from "@/components/dashboard/ProjectsChart";
 import MapPlaceholder from "@/components/dashboard/MapPlaceholder";
+import bgImage from "@/assets/background.png";
 
 const kpis = [
   {
@@ -52,27 +53,41 @@ const kpis = [
 
 const Index = () => {
   return (
-    <div className="h-screen w-screen overflow-hidden flex flex-col bg-background">
-      <DashboardHeader />
-      <main className="flex-1 grid grid-rows-[auto_1fr] grid-cols-12 gap-2 p-2 min-h-0">
-        {/* KPI Cards Row */}
-        <section className="col-span-12 grid grid-cols-6 gap-2">
-          {kpis.map((kpi) => (
-            <KpiCard key={kpi.title} {...kpi} />
-          ))}
-        </section>
+    <div
+      className="h-screen w-screen overflow-hidden flex flex-col relative"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70 z-0" />
 
-        {/* Main content area */}
-        <div className="col-span-8 min-h-0">
-          <MapPlaceholder />
-        </div>
+      {/* Content */}
+      <div className="relative z-10 flex flex-col h-full">
+        <DashboardHeader />
+        <main className="flex-1 grid grid-rows-[auto_1fr] grid-cols-12 gap-3 p-3 min-h-0">
+          {/* KPI Cards Row */}
+          <section className="col-span-12 grid grid-cols-6 gap-3">
+            {kpis.map((kpi) => (
+              <KpiCard key={kpi.title} {...kpi} />
+            ))}
+          </section>
 
-        {/* Right sidebar panels */}
-        <div className="col-span-4 grid grid-rows-2 gap-2 min-h-0">
-          <ProjectsChart />
-          <LandUsageChart />
-        </div>
-      </main>
+          {/* Main content area */}
+          <div className="col-span-8 min-h-0">
+            <MapPlaceholder />
+          </div>
+
+          {/* Right sidebar panels */}
+          <div className="col-span-4 grid grid-rows-2 gap-3 min-h-0">
+            <ProjectsChart />
+            <LandUsageChart />
+          </div>
+        </main>
+      </div>
     </div>
   );
 };
