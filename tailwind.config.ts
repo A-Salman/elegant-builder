@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        alexandria: ['Alexandria', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -56,6 +59,17 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        brand: {
+          gold: "hsl(var(--brand-gold))",
+          green: "hsl(var(--brand-green))",
+          slate: "hsl(var(--brand-slate))",
+          "warm-gray": "hsl(var(--brand-warm-gray))",
+          teal: "hsl(var(--brand-teal))",
+          brown: "hsl(var(--brand-brown))",
+          purple: "hsl(var(--brand-purple))",
+          coral: "hsl(var(--brand-coral))",
+          copper: "hsl(var(--brand-copper))",
         },
       },
       borderRadius: {
