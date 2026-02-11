@@ -10,20 +10,20 @@ const data = [
 
 const ProjectsChart = () => {
   return (
-    <Card>
-      <CardHeader className="pb-2">
-        <CardTitle className="text-base font-semibold">حالة المشاريع</CardTitle>
+    <Card className="h-full flex flex-col min-h-0">
+      <CardHeader className="pb-1 flex-shrink-0">
+        <CardTitle className="text-sm font-semibold">حالة المشاريع</CardTitle>
       </CardHeader>
-      <CardContent>
-        <div className="h-64" dir="ltr">
+      <CardContent className="flex-1 min-h-0 flex flex-col items-center justify-center pb-2">
+        <div className="w-full flex-1 min-h-0" dir="ltr">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
                 data={data}
                 cx="50%"
                 cy="50%"
-                innerRadius={55}
-                outerRadius={85}
+                innerRadius="40%"
+                outerRadius="65%"
                 paddingAngle={3}
                 dataKey="value"
               >
@@ -38,17 +38,14 @@ const ProjectsChart = () => {
                   direction: "rtl",
                   borderRadius: "8px",
                   border: "1px solid hsl(35, 15%, 88%)",
+                  fontSize: 12,
                 }}
               />
               <Legend
-                formatter={(value) => <span style={{ fontFamily: "Alexandria", fontSize: 12 }}>{value}</span>}
+                formatter={(value) => <span style={{ fontFamily: "Alexandria", fontSize: 11 }}>{value}</span>}
               />
             </PieChart>
           </ResponsiveContainer>
-        </div>
-        <div className="mt-2 text-center">
-          <span className="text-3xl font-bold text-foreground">79</span>
-          <span className="text-sm text-muted-foreground mr-1">مشروع</span>
         </div>
       </CardContent>
     </Card>
