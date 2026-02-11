@@ -1,10 +1,9 @@
-import { Building2, Users, MapPin, TrendingUp, Landmark, TreePine } from "lucide-react";
+import { Building2, LayoutGrid, ShoppingCart, CheckCircle, DollarSign } from "lucide-react";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import KpiCard from "@/components/dashboard/KpiCard";
 import LandUsageChart from "@/components/dashboard/LandUsageChart";
 import ProjectsChart from "@/components/dashboard/ProjectsChart";
 import MapPlaceholder from "@/components/dashboard/MapPlaceholder";
-import StatsTable from "@/components/dashboard/StatsTable";
 
 const kpis = [
   {
@@ -12,44 +11,42 @@ const kpis = [
     value: 79,
     unit: "مشروع",
     icon: Building2,
-    trend: { value: 12, label: "عن العام الماضي" },
     colorClass: "bg-primary",
   },
   {
-    title: "عدد السكان",
-    value: "563,462",
-    icon: Users,
-    trend: { value: 3.2, label: "نمو سنوي" },
+    title: "عدد قطع المرحلة الأولى",
+    value: "1,245",
+    unit: "قطعة",
+    icon: LayoutGrid,
     colorClass: "bg-secondary",
   },
   {
-    title: "المساحة الإجمالية",
-    value: "120,000",
-    unit: "كم²",
-    icon: MapPin,
+    title: "عدد قطع المرحلة الثانية",
+    value: "862",
+    unit: "قطعة",
+    icon: LayoutGrid,
     colorClass: "bg-brand-teal",
   },
   {
-    title: "نسبة الإنجاز",
-    value: "68%",
-    icon: TrendingUp,
-    trend: { value: 5, label: "عن الربع السابق" },
+    title: "إجمالي سعر البيع - المرحلة الثانية",
+    value: "48.5",
+    unit: "مليون ر.س",
+    icon: DollarSign,
+    colorClass: "bg-brand-copper",
+  },
+  {
+    title: "عدد القطع المباعة",
+    value: "1,680",
+    unit: "قطعة",
+    icon: ShoppingCart,
     colorClass: "bg-primary",
   },
   {
-    title: "المحافظات",
-    value: 8,
-    unit: "محافظة",
-    icon: Landmark,
+    title: "عدد القطع المخصصة",
+    value: "427",
+    unit: "قطعة",
+    icon: CheckCircle,
     colorClass: "bg-brand-slate",
-  },
-  {
-    title: "المساحات الخضراء",
-    value: "2,340",
-    unit: "هكتار",
-    icon: TreePine,
-    trend: { value: 8, label: "زيادة" },
-    colorClass: "bg-primary",
   },
 ];
 
