@@ -3,8 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const MapPlaceholder = () => {
   return (
-    <Card className="col-span-full lg:col-span-2 min-h-[400px]">
-      <CardHeader className="pb-2">
+    <Card className="h-full flex flex-col">
+      <CardHeader className="pb-2 flex-shrink-0">
         <div className="flex items-center justify-between">
           <CardTitle className="text-base font-semibold">خريطة منطقة حائل</CardTitle>
           <div className="flex gap-2">
@@ -28,8 +28,8 @@ const MapPlaceholder = () => {
           </div>
         </div>
       </CardHeader>
-      <CardContent className="flex-1">
-        <div className="relative h-[350px] w-full rounded-lg bg-gradient-to-br from-muted to-muted/50 border border-border flex flex-col items-center justify-center gap-4">
+      <CardContent className="flex-1 min-h-0 pb-4">
+        <div className="relative h-full w-full rounded-lg bg-gradient-to-br from-muted to-muted/50 border border-border flex flex-col items-center justify-center gap-4">
           <div className="rounded-full bg-primary/10 p-4">
             <MapPin className="h-10 w-10 text-primary" />
           </div>
@@ -39,7 +39,6 @@ const MapPlaceholder = () => {
               سيتم ربط خريطة ArcGIS JavaScript SDK هنا
             </p>
           </div>
-          {/* Map legend */}
           <div className="absolute bottom-4 start-4 flex flex-wrap gap-2">
             {[
               { label: "سكني", color: "bg-primary" },
