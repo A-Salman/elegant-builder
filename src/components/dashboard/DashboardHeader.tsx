@@ -1,6 +1,16 @@
 import logo from "@/assets/logo-white.svg";
+import { useLocation } from "react-router-dom";
+import { NavLink } from "@/components/NavLink";
+import { LayoutDashboard, Landmark } from "lucide-react";
+
+const navItems = [
+  { to: "/", label: "لوحة البيانات", icon: LayoutDashboard },
+  { to: "/investment", label: "اراضي الاستثمار", icon: Landmark },
+];
 
 const DashboardHeader = () => {
+  const location = useLocation();
+
   return (
     <header className="flex items-center justify-between px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-xl border-b border-white/10 flex-shrink-0" dir="rtl">
       <div className="flex items-center gap-2 sm:gap-4">
@@ -20,6 +30,27 @@ const DashboardHeader = () => {
             Hail Region Development Authority
           </span>
         </div>
+
+        {/* Navigation */}
+        <nav className="flex items-center gap-1 mr-2 sm:mr-4 border-r border-white/15 pr-2 sm:pr-4">
+          {navItems.map((item) => {
+            const isActive = location.pathname === item.to;
+            return (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] sm:text-xs transition-all ${
+                  isActive
+                    ? "bg-white/20 text-white border border-white/20"
+                    : "text-white/50 hover:text-white/80 hover:bg-white/10"
+                }`}
+              >
+                <item.icon className="h-3.5 w-3.5" />
+                {item.label}
+              </NavLink>
+            );
+          })}
+        </nav>
       </div>
       <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1 sm:py-1.5 border border-white/10">
         <span className="text-[10px] sm:text-xs text-white/50">آخر تحديث:</span>
