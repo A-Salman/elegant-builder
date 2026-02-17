@@ -144,7 +144,6 @@ const Investment = () => {
                 <div className="text-center">
                   <MapPin className="h-10 w-10 text-white/30 mx-auto mb-2" />
                   <p className="text-white/40 text-sm">خريطة اراضي الاستثمار</p>
-                  <p className="text-white/25 text-[10px] mt-1">ArcGIS Map Integration</p>
                 </div>
               </div>
               <div className="flex items-center justify-center gap-3 px-3 py-2 border-t border-white/10 flex-shrink-0">
